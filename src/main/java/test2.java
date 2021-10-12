@@ -1,9 +1,8 @@
-
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static javax.swing.text.DefaultStyledDocument.ElementSpec.ContentType;
 
 
 public class test2 {
@@ -18,8 +17,8 @@ public class test2 {
 //                "}";
         given().
                 baseUri("http://reqres.in/api").
-                contentType(ContentType.JSON).
-//                body(issueJSON).
+                basePath("/users").
+                contentType(io.restassured.http.ContentType.JSON).
                 when().
                 get().
                 then().
